@@ -28,9 +28,9 @@ void heapLittle(int *array,int length,int current_node){             //只是进
         swap(array+current_node,array+r_child);
         min = r_child;
     }
-    if(min!=current_node){
+    if(min!=current_node){　　　　　　　　　　　　　　　　　　
        // swap(array+current_node,array+min);
-        heapLittle(array,length,l_child);
+        heapLittle(array,length,l_child);　　　　　　　　　　//左孩子和右孩子都需要进行深度载建堆
         heapLittle(array,length,r_child);
     }
 }
@@ -42,7 +42,7 @@ void initHeap(int *array,int length){                                 //将数�
     }
 }
 
-void heapSort(int *array,int length){
+void heapSort(int *array,int length){               //堆排序的方法，取数组第一个元素再将最后一个补上去，然后再次进行堆的初始化
     int cur = length-1;
     array[0] = array[cur];
     initHeap(array,cur);
